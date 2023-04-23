@@ -1,0 +1,46 @@
+
+
+<!-- cartes de présentation du site : carousel -->
+<div id="carousel" class="carousel slide mt-3 py-7 relative" data-bs-ride="carousel">
+    <!-- boutons en dessous pour passer d'une slide à l'autre -->
+    <div class="carousel-indicators absolute right-0 bottom-14 left-0 flex justify-center p-0 mb-4">
+
+        <ng-template ngFor let-item [ngForOf]="titles" let-i="index">
+            <button type="button" class="bg-white-100" onclick="setImgIndex(i)"></button>
+        </ng-template>
+
+    </div>
+    <!-- bouton précédent -->
+    <button
+        class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline"
+        type="button" data-bs-target="#carousel" data-bs-slide="prev">
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <!-- bouton suivant -->
+    <button
+        class="carousel-control-next absolute top-0 bottom-0 right-0 flex items-center justify-center text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline"
+        type="button" data-bs-target="#carousel" data-bs-slide="next">
+        <span class="visually-hidden">Next</span>
+    </button>
+    <!-- contenu du carousel -->
+    <div class="carousel-inner relative h-[600px] items-center overflow-hidden">
+<!--
+        <ng-template ngFor let-item [ngForOf]="backgroundImageURLs" let-i="index" [titles]="titles">
+-->
+            <!-- image de fond -->
+            <img class="block object-cover h-[600px] w-full" :src="{{backgroundImageURLs[i]}}" />
+            <!-- dégradé de couleur pour mieux voir le texte -->
+            <div
+                class="carousel-caption absolute bottom-0 h-[600px] left-0 right-0 bg-gradient-to-b from-white/10 to-black/80">
+            </div>
+            <!-- texte -->
+            <div class="carousel-caption block absolute text-center bottom-14">
+                <slot name="fireButton"></slot>
+                <h5 class="text-3xl mb-3"> {{titles[i]}} </h5>
+                <slot name="paragraphes"></slot>
+            </div>
+<!--
+        </ng-template>
+-->
+    </div>
+</div>
