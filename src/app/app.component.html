@@ -60,13 +60,18 @@ bg-[url('assets/imgs/sweets.jpg')] bg-fixed bg-cover" role="banner">
       Mes projets info 
     </div>
     -->
-    <app-carrousel [size]="2"
+    <app-carrousel 
     [backgroundImageURLs]= "[
     'assets/imgs/rabbit.png',
+    'assets/imgs/sweets.jpg',
+    'assets/imgs/sweets.jpg',
     'assets/imgs/sweets.jpg']"
     [titles]="[
-    'OpenGL',
-    'Blender']"
+    'Developpement',
+    'Animations',
+    'Games',
+    'Others']"
+    [pageRelatedURLs]="['']"
     > </app-carrousel>
 
     <div

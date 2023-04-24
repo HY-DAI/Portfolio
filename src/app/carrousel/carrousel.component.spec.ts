@@ -5,7 +5,6 @@ import { CarrouselComponent } from './carrousel.component';
 describe('CarrouselComponent', () => {
   let component: CarrouselComponent;
   let fixture: ComponentFixture<CarrouselComponent>;
-  let index: BigInteger;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

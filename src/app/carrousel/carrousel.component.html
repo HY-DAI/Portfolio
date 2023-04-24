@@ -1,42 +1,55 @@
 <!-- cartes de présentation du site : carousel -->
-<div id="carousel" class="carousel slide mt-3 py-7 relative">
+<div id="carousel" class="carousel slide mt-3 py-7 relative text-white">
 
     <!-- contenu du carousel -->
-    <div class="carousel-inner relative h-[600px] items-center ">
+    <div class="carousel-inner relative h-[500px] items-center">
 
         <!-- image de fond -->
-        <img class="block object-cover h-[600px] w-full" :src="{{backgroundImageURLs[this.index]}}" />
+        <img class="block object-cover h-[500px] w-full" :src="{{backgroundImageURLs[this.index]}}" />
         <!-- dégradé de couleur pour mieux voir le texte -->
         <div
-            class="carousel-caption absolute bottom-0 h-[600px] left-0 right-0 bg-gradient-to-b from-white/10 to-black/80">
+            class="carousel-caption absolute bottom-0 h-[500px] left-0 right-0 bg-gradient-to-b from-white/10 to-black/80">
         </div>
         <!-- texte -->
-        <div class="carousel-caption block absolute text-center bottom-14">
-            <h5 class="text-3xl mb-3"> {{titles[this.index]}} </h5>
-            <slot class="[this.index==1 ? 'bg-red-500' : 'bg-red-100']" name="paragraphes"> fuck {{this.index}}</slot>
+        <div class="carousel-caption block relative text-center bottom-28">
+            <button class="text-3xl mb-3"> {{titles[this.index]}} </button>
+            <slot class="[this.index==1 ? 'bg-red-500' : 'bg-red-100']" name="paragraphes"></slot>
         </div>
 
     </div>
 
     <!-- bouton précédent -->
     <button class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center text-center border-0 
-        w-1/4 hover:outline-none hover:no-underline focus:outline-none focus:no-underline" type="button"
+        w-1/4  text-white
+        hover:outline-none hover:no-underline focus:outline-none focus:no-underline" type="button"
         (click)="previousImg()">
-        <span class="visually-hidden">Previous</span>
+        <div class="absolute left-10 opacity-60">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+            class="w-12 h-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+    </div>
     </button>
     <!-- bouton suivant -->
     <button class="carousel-control-next absolute top-0 bottom-0 right-0 flex items-center justify-center text-center border-0 
-        w-1/4 hover:outline-none hover:no-underline focus:outline-none focus:no-underline" type="button"
-        (click)="nextImg()">
-        <span class="visually-hidden">Next</span>
+        w-1/4 text-white
+        hover:outline-none hover:no-underline focus:outline-none focus:no-underline" type="button" (click)="nextImg()">
+        <div class="absolute right-10 opacity-60">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+            class="w-12 h-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+        </div>
     </button>
 
     <!-- boutons en dessous pour passer d'une slide à l'autre -->
-    <div class="carousel-indicators absolute right-0 bottom-14 left-0 flex justify-center p-0 mb-4">
+    <div class="carousel-indicators absolute right-0 bottom-14 left-0 flex flex-row space-x-4 justify-center mb-4">
         <ng-template ngFor let-item [ngForOf]="titles" let-i="index">
-            {{i}}
-            <button type="button" 
-            :class="[this.index+1===i ? 'bg-red-500' : 'bg-red-100']" (click)="setImgIndex(i)"></button>
+            <button class="flex-initial w-14 h-2 rounded-full bg-white"
+            [ngClass]="this.index==i ? 'bg-opacity-100' : 'bg-opacity-50'"
+            type="button" (click)="setImgIndex(i)">
+                <div class="invisible">-</div>
+            </button>
         </ng-template>
     </div>
 </div>

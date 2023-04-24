@@ -8,10 +8,15 @@ import { Component, Input } from '@angular/core';
 export class CarrouselComponent {
   
   index:number=0;
-  @Input() size: number=0;
+  size: number=0;
   @Input() backgroundImageURLs: string[] = [""];
   @Input() titles: string[] = [""];
-  
+  @Input() pageRelatedURLs: string[] = [""];
+
+  ngOnInit() {
+    this.size =this.backgroundImageURLs.length;
+  }
+
   setImgIndex(idx: number): void {
     this.index = idx;
   };
