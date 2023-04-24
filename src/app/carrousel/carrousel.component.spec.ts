@@ -21,8 +21,4 @@ describe('CarrouselComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  setImgIndex(idx: BigInt): void {
-     this.index = idx;
-  }
 });

@@ -6,7 +6,22 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./carrousel.component.css'],
 })
 export class CarrouselComponent {
+  
+  index:number=0;
   @Input() size: number=0;
   @Input() backgroundImageURLs: string[] = [""];
   @Input() titles: string[] = [""];
+  
+  setImgIndex(idx: number): void {
+    this.index = idx;
+  };
+  
+  previousImg(): void {
+    if(this.index>0) this.index--; 
+    else this.index=this.size-1;
+  };
+  nextImg(): void {
+    if(this.index<this.size-1) this.index++; 
+    else this.index=0;
+  };
 }

@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FlipcardComponent } from './flipcard/flipcard.component';
+import { CarrouselComponent } from './carrousel/carrousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlipcardComponent
+    FlipcardComponent,
+    CarrouselComponent
   ],
   imports: [
     BrowserModule
