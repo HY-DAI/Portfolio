@@ -1,8 +1,12 @@
 <div class="toolbar bg-opacity-50
 bg-[url('assets/imgs/sweets.jpg')] bg-fixed bg-cover" role="banner">
+  
   <img width="40" alt="Angular Logo"
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
-  <span>Welcome</span>
+    <ul>
+      <li><a routerLink="/homepage">Home</a></li>
+      <li><a routerLink="/artpage">Art</a></li>
+    </ul>
   <div class="spacer"></div>
   <a target="_blank" rel="noopener" href="https://fr.linkedin.com/in/huiying-dai-7219a71b5" title="LinkedIn">
     <svg id="linkedin-logo" height="24" width="24" data-name="Logo" viewBox="0 0 80 80" fill="#fff">
@@ -18,81 +22,7 @@ bg-[url('assets/imgs/sweets.jpg')] bg-fixed bg-cover" role="banner">
   </a>
 </div>
 
-<div class="welcome_bg pt-10 pb-10">
-  <div class="m-10 mt-20 font-mono">
 
-    <div class="invisible h-5 hover:visible hover:h-full">
-      <button class="visible flex space-x-2 text-white p-2 pr-4 bg-red-400 
-      rounded-full  bg-opacity-60 animate-bounce hover:bg-opacity-90 hover:animate-none">
-        <svg class="block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-        </svg>
-        <div class="block">
-        About me
-      </div>
-    </button>
 
-      <div class="mt-20 text-3xl text-center bg-red-400 py-10 animate-bounce">
-        Welcome \(^w^)/
-      </div>
-      <div class="bg-orange-100 p-10">
+<router-outlet></router-outlet>
 
-        <div class="absolute w-32 -mt-36 -ml-12">
-          <img class="" src="assets/imgs/bear_lick_sweet.gif" />
-        </div>
-        Bonjour et bienvenue sur mon portfolio !
-        <br />
-        Je suis un développeur full-stack passionné par la création de solutions innovantes et efficaces pour les
-        entreprises et les particuliers.
-
-        Dans ce portfolio, vous trouverez une sélection de mes projets les plus significatifs, ainsi que des détails sur
-        mes compétences et mon parcours professionnel. N'hésitez pas à me contacter pour toute question ou opportunité
-        de collaboration !
-        <br />
-        Merci de votre visite !
-      </div>
-    </div>
-
-    <!--
-    <div class="mt-20 text-3xl text-center bg-red-400 py-5 ">
-      Mes projets info 
-    </div>
-    -->
-    <app-carrousel 
-    [backgroundImageURLs]= "[
-    'assets/imgs/rabbit.png',
-    'assets/imgs/sweets.jpg',
-    'assets/imgs/sweets.jpg',
-    'assets/imgs/sweets.jpg']"
-    [titles]="[
-    'Developpement',
-    'Animations',
-    'Games',
-    'Others']"
-    [pageRelatedURLs]="['']"
-    > </app-carrousel>
-
-    <div
-      class="mt-10 gap-6 justify-center items-center grid grid-cols-1 place-items-center md:grid-cols-2 lg:gap-12 lg:grid-cols-3">
-
-      <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
-        backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
-      </app-flipcard>
-
-      <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
-        backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
-      </app-flipcard>
-
-      <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
-        backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
-      </app-flipcard>
-
-      <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
-        backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
-      </app-flipcard>
-
-    </div>
-  </div>
-</div>

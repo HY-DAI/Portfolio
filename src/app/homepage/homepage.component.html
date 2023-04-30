@@ -1,0 +1,56 @@
+
+<div class="welcome_bg pt-10 pb-10">
+    <div class="m-10 mt-20 font-mono">
+  
+      <app-infohover titreBtn="About me" titreContenu="Welcome \(^w^)/" imageURL="assets/imgs/bear_lick_sweet.gif"
+        description1="    Bonjour et bienvenue sur mon portfolio !" description2="
+      Développeuse full-stack, je suis passionnée par la création de solutions innovantes et efficaces pour les
+      entreprises et les particuliers.
+  
+      Voici une sélection de mes projets les plus significatifs, ainsi que des détails sur
+      mes compétences et mon parcours professionnel. N'hésitez pas à me contacter pour toute question ou opportunité
+      de collaboration !" description3="    Merci de votre visite !    ">
+      </app-infohover>
+  
+      <!--
+      <div class="mt-20 text-3xl text-center bg-red-400 py-5 ">
+        Mes projets info 
+      </div>
+      -->
+      <app-carrousel [backgroundImageURLs]="[
+      'assets/imgs/rabbit.png',
+      'assets/imgs/sweets.jpg',
+      'assets/imgs/rabbit.png',
+      'assets/imgs/sweets.jpg']" [titles]="[
+      'Developpement',
+      'Animations',
+      'Games',
+      'Others']" [pageRelatedURLs]="[
+      '#/artpage',
+      '#/artpage',
+      '#/artpage',
+      '#/artpage'
+      ]"> </app-carrousel>
+  
+      <div
+        class="mt-10 gap-6 justify-center items-center grid grid-cols-1 place-items-center md:grid-cols-2 lg:gap-12 lg:grid-cols-3">
+  
+        <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
+          backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
+        </app-flipcard>
+  
+        <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
+          backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
+        </app-flipcard>
+  
+        <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
+          backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
+        </app-flipcard>
+  
+        <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
+          backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
+        </app-flipcard>
+  
+      </div>
+    </div>
+  </div>

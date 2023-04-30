@@ -1,0 +1,58 @@
+<header class="mt-20">
+    <h1>Art School</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Faculty</a></li>
+        <li><a href="#">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h2>Welcome to Art School</h2>
+      <p>We are a leading institution in art education, providing students with the skills and techniques to become successful artists.</p>
+    </section>
+    <section class="courses">
+      <h2>Featured Courses</h2>
+      <div class="row">
+        <div class="col-md-4" ng-repeat="course in courses">
+          <div class="course">
+            <img src="assets/imgs/rabbit.png">
+            <h3>course.title</h3>
+            <p>course.description</p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="faculty">
+      <h2>Our Faculty</h2>
+      <div class="row">
+        <div class="col-md-4" ng-repeat="faculty in faculties">
+          <div class="faculty-member">
+            <img src="assets/imgs/rabbit.png">
+            <h3>faculty.name</h3>
+            <p>faculty.position</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gallery">
+      <h2>Student Gallery</h2>
+      <div class="row">
+        <div class="col-md-4" ng-repeat="artwork in artworks">
+          <div class="artwork">
+            <img src="assets/imgs/rabbit.png">
+            <h3>artwork.title</h3>
+            <p>artwork.description</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; Art School 2023. All rights reserved.</p>
+  </footer>
