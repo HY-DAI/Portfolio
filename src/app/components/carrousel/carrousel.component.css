@@ -1,0 +1,45 @@
+
+.slide_left {
+    animation: slide_left 3s infinite;
+}
+.slide_right {
+    animation: slide_right 3s infinite;
+}
+.white_flash {
+    animation: white_flash 3s infinite;
+}
+
+@keyframes slide_left {
+    0% {
+      right: 0px;
+    }
+    20% {
+      right: 100%;
+    }
+    100% {
+      right: 100%;
+    }
+  }
+
+  @keyframes slide_right {
+      0% {
+        left: 0px;
+      }
+      20% {
+        left: 100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+    
+  @keyframes white_flash {
+    0% {
+        opacity: 100%;
+        background-color: black;
+    }
+    100% {
+        opacity: 60%;
+        background-color: black;
+    }
+  }

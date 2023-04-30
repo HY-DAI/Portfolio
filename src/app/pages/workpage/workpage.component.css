@@ -1,35 +1,6 @@
 
-.spacer {
-    flex: 1;
-  }
 
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    color: white;
-    font-weight: 600;
-  }
-
-  .toolbar img {
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
-  }
-
-  .toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .welcome_bg {
+  .animated_bg {
     --s: 100px; /* control the size */
     --c1: #C3CCAF;
     --c2: #67434F;
@@ -84,3 +55,56 @@
       calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0
     }
   }
+
+
+  .space_bg {
+        
+  background: linear-gradient(135deg, #ff8a00, #e52e71, #b8008a, #3a0088, #0072b5, #00a97d);
+  }
+
+  .ocean_bg {
+        
+    background: linear-gradient(to bottom right, #68b0ab, #1d4e89);
+    
+  }
+
+  .pink_chess_bg {
+        
+  background-color: #FDF3E7;
+  background-image: linear-gradient(45deg, #F2BAC9 25%, transparent 25%), 
+                    linear-gradient(-45deg, #F2BAC9 25%, transparent 25%), 
+                    linear-gradient(45deg, transparent 75%, #F2BAC9 75%), 
+                    linear-gradient(-45deg, transparent 75%, #F2BAC9 75%);
+  background-size: 100px 100px;
+  background-position: 0 0, 0 50px, 50px -50px, -50px 0px;
+
+  }
+  
+  .cat_left {
+    animation: slide_left 40s infinite;
+  }   
+  .cat_left.faster {
+    animation: slide_left 30s infinite;
+  }  
+  
+  .cat_right {
+    animation: slide_right 60s infinite;
+  }  
+
+@keyframes slide_left {
+    0% {
+      right: -120px;
+    }
+    100% {
+      right: 100%;
+    }
+  }
+
+  @keyframes slide_right {
+      0% {
+        left: -120px;
+      }
+      100% {
+        left: 100%;
+      }
+    }
