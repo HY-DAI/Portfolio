@@ -35,16 +35,19 @@ export class CarrouselComponent implements OnInit {
   setImgIndex(idx: number): void {
     this.animate = true;
     this.index = idx;
+    this.timeLeft = this.secPerImage;
   };
   
   previousImg(): void {
     this.animate = true;
+    this.timeLeft = this.secPerImage;
     if(this.index>0) this.index--; 
     else this.index=this.size-1;
   };
 
   nextImg(): void {
     this.animate = true;
+    this.timeLeft = this.secPerImage;
     if(this.index<this.size-1) this.index++; 
     else this.index=0;
   };
