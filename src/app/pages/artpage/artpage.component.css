@@ -134,14 +134,14 @@ header {
     animation: slide 3s ease-in-out infinite;
 }
   
-  @keyframes background-animation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+@keyframes background-animation {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
   
 @keyframes slide {
     0% {
