@@ -1,8 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, style, transition, animate } from '@angular/animations';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-carrousel',
+  standalone: true,
+  imports: [CommonModule,RouterModule],
   templateUrl: './carrousel.component.html',
   styleUrls: ['./carrousel.component.css'],
   animations: [

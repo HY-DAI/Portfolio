@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-flipcard',
+  standalone: true,
   templateUrl: './flipcard.component.html',
   styleUrls: ['./flipcard.component.css']
 })

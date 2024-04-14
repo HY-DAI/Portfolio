@@ -1,7 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-infohover',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './infohover.component.html',
   styleUrls: ['./infohover.component.css']
 })
