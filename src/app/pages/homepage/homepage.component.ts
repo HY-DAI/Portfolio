@@ -5,7 +5,9 @@ import { InfohoverComponent } from 'src/app/components/infohover/infohover.compo
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CarrouselComponent,InfohoverComponent],
+  imports: [
+    CarrouselComponent,
+    InfohoverComponent,],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
