@@ -57,3 +57,130 @@
   <footer>
     <p>&copy; JustWantedToTryCopyrights 2023. All rights reserved.</p>
   </footer>
+
+
+<body>
+
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+
+<script>
+    // Get the canvas and set up the context
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Game objects
+    const player = {
+        x: 50,
+        y: 50,
+        width: 20,
+        height: 20,
+        color: "blue",
+        speed: 5,
+        dx: 0,
+        dy: 0
+    };
+
+    const circle = {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: 10,
+        color: "red",
+        speedX: 2,
+        speedY: 2
+    };
+
+    // Draw the player (square)
+    function drawPlayer() {
+        ctx.fillStyle = player.color;
+        ctx.fillRect(player.x, player.y, player.width, player.height);
+    }
+
+    // Draw the circle
+    function drawCircle() {
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = circle.color;
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    // Move the player based on key input
+    function updatePlayerPosition() {
+        player.x += player.dx;
+        player.y += player.dy;
+
+        // Prevent the player from going off-screen
+        if (player.x < 0) player.x = 0;
+        if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+        if (player.y < 0) player.y = 0;
+        if (player.y + player.height > canvas.height) player.y = canvas.height - player.height;
+    }
+
+    // Move the circle around randomly
+    function updateCirclePosition() {
+        circle.x += circle.speedX;
+        circle.y += circle.speedY;
+
+        // Bounce the circle off the walls
+        if (circle.x - circle.radius < 0 || circle.x + circle.radius > canvas.width) {
+            circle.speedX = -circle.speedX;
+        }
+        if (circle.y - circle.radius < 0 || circle.y + circle.radius > canvas.height) {
+            circle.speedY = -circle.speedY;
+        }
+    }
+
+    // Check for collision between the player and the circle
+    function checkCollision() {
+        const distX = Math.abs(player.x + player.width / 2 - circle.x);
+        const distY = Math.abs(player.y + player.height / 2 - circle.y);
+
+        if (distX < player.width / 2 + circle.radius && distY < player.height / 2 + circle.radius) {
+            // If a collision occurs, move the circle to a new random location
+            circle.x = Math.random() * canvas.width;
+            circle.y = Math.random() * canvas.height;
+        }
+    }
+
+    // Clear the canvas
+    function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Update game frame
+    function updateGame() {
+        clearCanvas();
+        drawPlayer();
+        drawCircle();
+        updatePlayerPosition();
+        updateCirclePosition();
+        checkCollision();
+        requestAnimationFrame(updateGame);
+    }
+
+    // Keydown event handler
+    function keyDown(e) {
+        if (e.key === "ArrowRight" || e.key === "d") player.dx = player.speed;
+        if (e.key === "ArrowLeft" || e.key === "a") player.dx = -player.speed;
+        if (e.key === "ArrowUp" || e.key === "w") player.dy = -player.speed;
+        if (e.key === "ArrowDown" || e.key === "s") player.dy = player.speed;
+    }
+
+    // Keyup event handler
+    function keyUp(e) {
+        if (e.key === "ArrowRight" || e.key === "d") player.dx = 0;
+        if (e.key === "ArrowLeft" || e.key === "a") player.dx = 0;
+        if (e.key === "ArrowUp" || e.key === "w") player.dy = 0;
+        if (e.key === "ArrowDown" || e.key === "s") player.dy = 0;
+    }
+
+    // Event listeners for keyboard input
+    document.addEventListener("keydown", keyDown);
+    document.addEventListener("keyup", keyUp);
+
+    // Start the game loop
+    updateGame();
+
+</script>
+
+</body>
