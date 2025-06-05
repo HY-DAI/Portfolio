@@ -1,12 +1,5 @@
-
 <div class="">
-
-      <!--
-      <div class="mt-20 text-3xl text-center bg-red-400 py-5 ">
-        Mes projets info 
-      </div>
-      -->
-      <app-carrousel 
+  <!-- <app-carrousel 
       [backgroundImageURLs]="[
       'assets/imgs/rabbit.png',
       'assets/imgs/sweets.jpg',
@@ -23,9 +16,9 @@
       '/artpage',
       '//artpage']">
     </app-carrousel>
-  
-     
-    <div class="m-10 mt-20 font-mono">   
+   -->
+
+  <!-- <div class="m-10 mt-20 font-mono">   
       <app-infohover titreBtn="About me" titreContenu="Welcome \(^w^)/" imageURL="assets/imgs/bear_lick_sweet.gif"
         description1="    Bonjour et bienvenue sur mon portfolio !" description2="
       Développeuse full-stack, je suis passionnée par la création de solutions innovantes et efficaces pour les
@@ -36,5 +29,54 @@
       de collaboration !" description3="    Merci de votre visite !    ">
       </app-infohover>
 
+    </div> -->
+
+  <div class="bg-cover bg-center bg-no-repeat bg-fixed" style="
+      background-image: url(../assets/imgs/homepage/background-openspace.png);
+      clip-path: inset(0 0 0 0); overflow-x: hidden;">
+    <app-background-text></app-background-text>
+    <app-interactive-face></app-interactive-face>
+  </div>
+
+  <app-workpage></app-workpage>
+  
+
+<footer class="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-6">
+  <div class="container mx-auto text-center">
+    <p>
+      © 2023 My Portfolio. All rights reserved.
+    </p>
+    <div class="mt-4">
+      <a class="text-white hover:text-gray-200 mx-2" href="#">
+        <i class="fab fa-facebook-f">
+        </i>
+      </a>
+      <a class="text-white hover:text-gray-200 mx-2" href="#">
+        <i class="fab fa-twitter">
+        </i>
+      </a>
+      <a class="text-white hover:text-gray-200 mx-2" href="#">
+        <i class="fab fa-linkedin-in">
+        </i>
+      </a>
+      <a class="text-white hover:text-gray-200 mx-2" href="#">
+        <i class="fab fa-github">
+        </i>
+      </a>
     </div>
   </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.building').forEach(building => {
+    building.addEventListener('mouseover', function () {
+      const toast = document.getElementById('toast');
+      toast.innerText = this.getAttribute('data-info');
+      toast.style.display = 'block';
+    });
+    building.addEventListener('mouseout', function () {
+      const toast = document.getElementById('toast');
+      toast.style.display = 'none';
+    });
+  });
+</script>

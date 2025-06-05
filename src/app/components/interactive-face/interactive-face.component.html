@@ -1,0 +1,18 @@
+<div class="container" (click)="toggleFace()">
+  <div class="face-wrapper">
+    <img [src]="faceImages[currentFaceIndex]" alt="face" class="face-img" loading="lazy"/>
+    <div class="facestuff">
+      <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Eyes -->
+        <circle class="eyeball left" cx="110" cy="105" r="8" fill="#000"/>
+        <circle class="eyeball right" cx="200" cy="105" r="8" fill="#000"/>
+        <!-- Nose -->
+        <path *ngIf="!faceImages[currentFaceIndex].includes('surprised')" id="nose" d="M160,120 Q165,140 160,150" stroke="#333" stroke-width="2" fill="none" />
+        <!-- Mouth -->
+        <path *ngIf="!faceImages[currentFaceIndex].includes('surprised')" id="mouth" d="M120,170 Q150,180 180,170" stroke="#333" stroke-width="3" fill="none" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+

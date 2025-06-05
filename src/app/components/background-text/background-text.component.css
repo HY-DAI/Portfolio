@@ -1,0 +1,29 @@
+/* .background {
+    width: 100vw;
+    height: 100vh;
+    background: url('your-background.jpg') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+  } */
+
+  #text-container p {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #5D4037; 
+    font-family: 'Quicksand', 'Segoe UI', 'Fredoka', sans-serif;
+    white-space: nowrap; /* Prevents text from breaking lines */
+    animation: slide-left 10s linear infinite; /* Moves left smoothly */
+    max-width: 100vw; /* Empêche la container de dépasser l'écran */
+    /* overflow-x: hidden;  */
+  }
+  
+  @keyframes slide-left {
+    from {
+      left: 100vw; /* Start off-screen on the right */
+    }
+    to {
+      left: -120vw; /* Moves off-screen to the left */
+    }
+  }
+  

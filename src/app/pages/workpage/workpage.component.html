@@ -1,66 +1,91 @@
+<section class="py-20 bg-gray-100" id="projects">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-pink-500">
+      PROJECTS
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 
+      <app-simplecard cardName="Visite 3D avec OpenGL"
+        presentation="A web application that allows users to track their tasks and manage their time efficiently."
+        backgroundImageURL="assets/imgs/workpage/opengl_visite.png"
+        link="https://github.com/HY-DAI/OpenGL_projet/blob/main/Rapport%20OpenGL.pdf">
+      </app-simplecard>
 
-<div class="ocean_bg pb-10">
+      <app-simplecard cardName="Global Illumation"
+        presentation="A web application that allows users to track their tasks and manage their time efficiently."
+        backgroundImageURL="assets/imgs/workpage/global_illumination.png"
+        link="assets/tinypages/globalIllumination-page.html">
+      </app-simplecard>
+      
+      <app-simplecard cardName="Recherche sur la VR publiée"
+        presentation="A web application that allows users to track their tasks and manage their time efficiently."
+        backgroundImageURL="assets/imgs/workpage/vr_unreal_engine.png"
+        link="assets/tinypages/vrUE-page.html">
+        <!-- https://www.mdpi.com/2076-3417/13/5/3044 -->
+      </app-simplecard>
+      
+      <app-simplecard cardName="Quiz sur la culture chinoise"
+        presentation="A web application that allows users to track their tasks and manage their time efficiently."
+        backgroundImageURL="assets/imgs/workpage/quiz_culture_chinoise.png"
+        link="https://github.com/HY-DAI/Projet_Quiz_Flask_VueJS">
+      </app-simplecard>
+      
+      <app-simplecard cardName="Animation 3D avec Blender"
+        presentation="A web application that allows users to track their tasks and manage their time efficiently."
+        backgroundImageURL="assets/imgs/workpage/animation_blender.png"
+        link="assets/tinypages/animation3D-page.html">
+      </app-simplecard>
 
-    <div class="cat_left w-[150px] absolute right-0">
-        <img src="assets/imgs/orange_cat_walking.gif">
+      <app-simplecard cardName="Adent of Code"
+        presentation="A web application that allows users to track their tasks and manage their time efficiently."
+        backgroundImageURL="https://storage.googleapis.com/a1aa/image/XFvBT25dYKo0CNO0i8xICu0ULYjhKGRRWjQFbUnJp3zGJEfJA.jpg"
+        link="./projects/test.html">
+      </app-simplecard>
+      
     </div>
-    
-    <div class="cat_left faster w-[150px] absolute right-0">
-        <img src="assets/imgs/skeleton_cat_walking.gif">
-    </div>
-    
-    <div class="cat_right w-[150px] absolute right-0">
-        <img src="assets/imgs/proud_cat_walking.gif">
-    </div>
-
-    <div class="h-[100px] pink_chess_bg">
-
-    </div>
-
-    <div
-    class="gap-6 justify-center items-center grid grid-cols-1 place-items-center md:grid-cols-2 lg:gap-12 lg:grid-cols-3">
-
-    <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
-      backgroundImageURL="assets/imgs/bear_spinning.gif" linkedinURL="" imageURL="" licenseURL="">
-    </app-flipcard>
-
-    <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
-      backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
-    </app-flipcard>
-
-    <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
-      backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
-    </app-flipcard>
-
-    <app-flipcard name="OpenGL" presentation="Rollcoaster little game" hobby="Bunny-chan will conquer the world"
-      backgroundImageURL="assets/imgs/rabbit.png" linkedinURL="" imageURL="" licenseURL="">
-    </app-flipcard>
-
   </div>
-</div>
+</section>
 
 
-<div class="animated_bg pb-10">
-
-
-    <img src="assets/imgs/proud_cat_walking.gif">
-
-</div>
-
-
-<div class="space_bg pb-10">
-
-
-    <img src="assets/imgs/skeleton_cat_walking.gif">
-    
-</div>
-
-
-<div class="pink_chess_bg pb-10">
-
-
-    <img src="assets/imgs/orange_cat_walking.gif">
-    
-</div>
-
+<section class="py-20 bg-white" id="contact">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-purple-500">
+      CONTACT
+    </h2>
+    <div class="mt-12 flex flex-col md:flex-row justify-center items-center">
+      <div class="md:w-1/2">
+        <img alt="Illustration of a person sending a message through a contact form" height="400"
+          src="https://storage.googleapis.com/a1aa/image/nx9iGxtEqA7UNBeF149gOpln7D4BNumfnRfHo8k6qTclIh4nA.jpg"
+          width="400" />
+      </div>
+      <div class="md:w-1/2 mt-8 md:mt-0 md:pl-12">
+        <form action="#" class="bg-gray-100 p-8 rounded-lg shadow-lg" method="POST">
+          <div class="mb-4">
+            <label class="block text-lg font-bold" for="name">
+              Name
+            </label>
+            <input class="w-full p-2 mt-2 border border-gray-300 rounded-lg" id="name" name="name" required=""
+              type="text" />
+          </div>
+          <div class="mb-4">
+            <label class="block text-lg font-bold" for="email">
+              Email
+            </label>
+            <input class="w-full p-2 mt-2 border border-gray-300 rounded-lg" id="email" name="email" required=""
+              type="email" />
+          </div>
+          <div class="mb-4">
+            <label class="block text-lg font-bold" for="message">
+              Message
+            </label>
+            <textarea class="w-full p-2 mt-2 border border-gray-300 rounded-lg" id="message" name="message" required=""
+              rows="4"></textarea>
+          </div>
+          <button class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600" type="submit">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

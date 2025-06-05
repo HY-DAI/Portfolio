@@ -1,0 +1,7 @@
+<div class="background">
+  <div id="text-container">
+    <p *ngFor="let sentence of visibleSentences" [style.top]="sentence.top + 'vh'">
+      {{ sentence.text }}
+    </p>
+  </div>
+</div>
