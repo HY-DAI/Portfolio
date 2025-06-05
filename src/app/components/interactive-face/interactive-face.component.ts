@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, HostListener, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,11 +9,14 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class InteractiveFaceComponent implements AfterViewInit {
+  @ViewChild('faceImg') image!: ElementRef<HTMLImageElement>;
+
   faceImages = [
     'assets/imgs/homepage/face-neutral.svg',
     'assets/imgs/homepage/face-surprised.svg',
     'assets/imgs/homepage/face-smirk.svg'
   ];
+  newFaceLoaded = false;
   currentFaceIndex = 0;
   mouseX = 0;
   mouseY = 0;
@@ -26,16 +29,21 @@ export class InteractiveFaceComponent implements AfterViewInit {
 
   constructor(private el: ElementRef) { }
 
+
   ngAfterViewInit() {
     this.eyeballs = this.el.nativeElement.querySelectorAll('.eyeball');
     this.mouth = this.el.nativeElement.querySelector('#mouth');
     this.nose = this.el.nativeElement.querySelector('#nose');
+
+    this.image.nativeElement.onload = () => {
+      this.newFaceLoaded = true;
+    };
   }
 
   toggleFace() {
+    this.newFaceLoaded = false;
     this.currentFaceIndex = (this.currentFaceIndex + 1) % this.faceImages.length;
   }
-
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {

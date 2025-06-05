@@ -31,52 +31,37 @@
 
     </div> -->
 
-  <div class="bg-cover bg-center bg-no-repeat bg-fixed" style="
-      background-image: url(../assets/imgs/homepage/background-openspace.png);
-      clip-path: inset(0 0 0 0); overflow-x: hidden;">
+  <div
+    class="relative w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed bg-[url('assets/imgs/homepage/background-openspace.png')] overflow-x-hidden">
     <app-background-text></app-background-text>
     <app-interactive-face></app-interactive-face>
   </div>
 
   <app-workpage></app-workpage>
-  
 
-<footer class="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-6">
-  <div class="container mx-auto text-center">
-    <p>
-      © 2023 My Portfolio. All rights reserved.
-    </p>
-    <div class="mt-4">
-      <a class="text-white hover:text-gray-200 mx-2" href="#">
-        <i class="fab fa-facebook-f">
-        </i>
-      </a>
-      <a class="text-white hover:text-gray-200 mx-2" href="#">
-        <i class="fab fa-twitter">
-        </i>
-      </a>
-      <a class="text-white hover:text-gray-200 mx-2" href="#">
-        <i class="fab fa-linkedin-in">
-        </i>
-      </a>
-      <a class="text-white hover:text-gray-200 mx-2" href="#">
-        <i class="fab fa-github">
-        </i>
-      </a>
+
+  <footer class="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-6">
+    <div class="container mx-auto text-center">
+      <p>
+        © 2023 My Portfolio. All rights reserved.
+      </p>
+      <div class="mt-4">
+        <a class="text-white hover:text-gray-200 mx-2" href="#">
+          <i class="fab fa-facebook-f">
+          </i>
+        </a>
+        <a class="text-white hover:text-gray-200 mx-2" href="#">
+          <i class="fab fa-twitter">
+          </i>
+        </a>
+        <a class="text-white hover:text-gray-200 mx-2" href="#">
+          <i class="fab fa-linkedin-in">
+          </i>
+        </a>
+        <a class="text-white hover:text-gray-200 mx-2" href="#">
+          <i class="fab fa-github">
+          </i>
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
-
-<script>
-  document.querySelectorAll('.building').forEach(building => {
-    building.addEventListener('mouseover', function () {
-      const toast = document.getElementById('toast');
-      toast.innerText = this.getAttribute('data-info');
-      toast.style.display = 'block';
-    });
-    building.addEventListener('mouseout', function () {
-      const toast = document.getElementById('toast');
-      toast.style.display = 'none';
-    });
-  });
-</script>
+  </footer>

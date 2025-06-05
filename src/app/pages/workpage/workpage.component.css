@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Dramatic';
+  src: url('/assets/fonts/dramaticheart/DramaticHeartsBoldPersonalBold-ZV7WJ.otf') format('opentype');
+}
+
+.title {
+  font-family: 'Dramatic', sans-serif;
+  font-size: 3em;
+}
+
+
+
 /* .animated_bg {
   --s: 100px;
   --c1: #C3CCAF;
