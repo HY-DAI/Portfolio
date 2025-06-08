@@ -43,28 +43,3 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-<script>
-  function createFlowers() {
-    const container = document.getElementById('projects'); // Target the section
-
-    if (!container) {
-      console.error("Element with ID 'projects' not found.");
-      return;
-    }
-    for (let i = 0; i < 20; i++) {
-      let flower = document.createElement('div');
-      flower.className = 'flower';
-      flower.style.left = Math.random() * 100 + 'vw';
-      flower.style.animationDuration = (Math.random() * 5 + 5) + 's';
-      container.appendChild(flower);
-    }
-  }
-
-  createFlowers();
-</script>

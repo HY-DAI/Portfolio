@@ -7,15 +7,10 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'portfolio';
-  isDropdownOpen = false;
 
+  navbarVisible: boolean = true;
   lastScrollTop = 0;
-  navbarVisible = true;
-  
-  // toggleDropdown() {
-  //   this.isDropdownOpen = !this.isDropdownOpen;
-  // } 
-  
+
   toggleDropdownMenu() {
     let menu: HTMLElement | null = document.getElementById("dropdown-menu");
   
@@ -23,12 +18,13 @@ export class AppComponent {
       menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
   }
-  
 
   @HostListener('window:scroll', [])
   onScroll() {
-    const scrollTop = window.scrollY;
-    this.navbarVisible = scrollTop < this.lastScrollTop || scrollTop === 0 ;
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+    this.navbarVisible = scrollTop < this.lastScrollTop || scrollTop === 0;
     this.lastScrollTop = scrollTop;
   }
+  
 }

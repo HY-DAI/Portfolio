@@ -1,66 +1,110 @@
-<div class="background">
-<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/lGz_RHHS_vg" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/2dmZh8uiA98" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
-
-</div>
-
-  
+<body class="background">
+  <div id="flower-container"></div>
+  <div class="videos-container">
+    <div class="wrapper">
+      <div class="video-container">
+        <h1>Présentation du projet</h1>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lGz_RHHS_vg" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-container">
+        <h1>Résultat disponible sur Youtube</h1>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2dmZh8uiA98" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</body>
 
 <style>
-
-.background {
-    position: relative;
-    background-color: #BED3C3;
-    overflow: hidden;
+  .background {
+    position: absolute;
+    background-color: #042010;
+    color: #FF4500;
+    overflow-x: hidden;
     width: 100%;
     height: 100%;
+    padding: 8px;
+text-shadow: 1px 1px 3px rgba(255, 100, 100, 0.5);
   }
-      @keyframes fall {
-      0% {
-        transform: translateY(-10vh) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0.3;
-      }
+
+  .wrapper {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    .wrapper {
+      width: 90%;
     }
-  
-    .flower {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="5"/><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/></svg>');
-      background-size: contain;
-      animation: fall 6s linear infinite;
-      opacity: 0.8;
+  }
+
+  .video-container {
+    padding-top: 10px;
+    padding-bottom: 50px;
+  }
+
+  .video-container {
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
     }
-  </style>
-  
-  <script>
-    function createFlowers() {
-      for (let i = 0; i < 20; i++) {
-        let flower = document.createElement('div');
-        flower.className = 'flower';
-        flower.style.left = Math.random() * 100 + 'vw';
-        flower.style.animationDuration = (Math.random() * 5 + 5) + 's';
-        document.body.appendChild(flower);
-      }
+
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0.3;
     }
-  
-    createFlowers();
-  </script>
-  
+  }
+
+  #flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .flower {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange"><circle cx="12" cy="12" r="5"/><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/></svg>');
+    background-size: contain;
+    animation: fall 6s linear infinite;
+    opacity: 0.8;
+  }
+</style>
+
+<script>
+  function createFlowers() {
+    const container = document.getElementById("flower-container");
+
+    for (let i = 0; i < 20; i++) {
+      let flower = document.createElement("div");
+      flower.className = "flower";
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = Math.random() * 5 + 5 + "s";
+      container.appendChild(flower);
+    }
+  }
+
+  createFlowers();
+</script>

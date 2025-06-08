@@ -1,22 +1,29 @@
-<!-- <embed  src="../imgs/workpage/vr_unreal_engine.pdf" width="100%" height="100%" style="border: none;">
-</embed> -->
+<body>
+    <!-- <iframe  src="../imgs/workpage/vr_unreal_poster.pdf" width="100%" height="100%" style="border: none;">
+    </iframe> -->
 
-<canvas id="pdfCanvas"></canvas>
+    <div class="poster-container">
+        <img src="../imgs/workpage/vr_unreal_poster.jpg" width="100%" height="auto">
+    </div>
 
-<div style="
-position: fixed;
-top: 20%;     
-left: 5%;
-z-index: 1000;
-">
-    <a href="https://www.mdpi.com/2076-3417/13/5/3044" target="_blank">
-        <button class="floating-button">
-            Pour voir la <br>publication, <br>cliquez ici !
-        </button>
-    </a>
-</div>
+    <div class="button-container">
+        <a href="https://www.mdpi.com/2076-3417/13/5/3044" target="_blank">
+            <button class="floating-button">
+                To see <br>publication, <br>click here !
+            </button>
+        </a>
+    </div>
+</body>
+
 
 <style>
+    .button-container {   
+        position: fixed;
+        top: 10%;     
+        left: 5%;
+        z-index: 1000;
+    }
+    
     .floating-button {
         background-color: #f97316;
         color: white;
@@ -60,37 +67,4 @@ z-index: 1000;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
     }
-
-    canvas {
-        display: block;
-        width: 100%;
-        height: auto;
-        background-color: lightgray;
-        /* Temporary background to see if it's rendering */
-    }
 </style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-<script>
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-
-    const url = '/assets/imgs/workpage/vr_unreal_engine.pdf';
-
-    pdfjsLib.getDocument(url).promise.then(pdf => {
-        pdf.getPage(1).then(page => {
-            const canvas = document.getElementById('pdfCanvas');
-            const context = canvas.getContext('2d');
-            const viewport = page.getViewport({ scale: 1.5 });
-
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
-
-            const renderTask = page.render({ canvasContext: context, viewport });
-            renderTask.promise.then(() => {
-                console.log("PDF rendered successfully!");
-            });
-        });
-    }).catch(error => {
-        console.error("Error loading PDF:", error);
-    });
-</script>
