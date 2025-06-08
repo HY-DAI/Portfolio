@@ -1,14 +1,33 @@
 @font-face {
   font-family: 'Dramatic';
-  src: url('/assets/fonts/dramaticheart/DramaticHeartsBoldPersonalBold-ZV7WJ.otf') format('opentype');
+  src: url('/assets/fonts/dramaticheart/DramaticHeartsBoldPersonalBold.otf') format('opentype');
 }
 
 .title {
   font-family: 'Dramatic', sans-serif;
-  font-size: 3em;
+  font-size: clamp(5rem, 10vw, 10rem);
 }
 
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
 
+.flower {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="5"/><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/></svg>');
+  background-size: contain;
+  animation: fall 6s linear infinite;
+  opacity: 0.8;
+}
 
 /* .animated_bg {
   --s: 100px;

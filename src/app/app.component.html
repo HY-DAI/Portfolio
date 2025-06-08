@@ -40,26 +40,56 @@
 </nav> -->
 
 <body>
-<nav class="navbar" [class.hidden]="!navbarVisible">
-  <div class="flex inline-flex space-x-10">
-    <a routerLink="/homepage" class="flex items-center">
-      <img src="assets/imgs/logo.svg" width="55" alt="HYD Logo" />
-    </a>
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-      <svg id="youtube-logo" width="55" data-name="Logo" viewBox="0 0 24 24" fill="#000">
-        <path
-          d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z" />
-      </svg>
-    </a>
-    <a href="https://fr.linkedin.com/in/huiying-dai-7219a71b5" target="_blank">
-      <svg id="linkedin-logo" width="55" data-name="Logo" viewBox="0 0 80 80" fill="#000">
-        <path
-          d="M1.15 21.7h13V61h-13zm46.55-1.3c-5.7 0-9.1 2.1-12.7 6.7v-5.4H22V61h13.1V39.7c0-4.5 2.3-8.9 7.5-8.9s8.3 4.4 8.3 8.8V61H64V38.7c0-15.5-10.5-18.3-16.3-18.3zM7.7 2.6C3.4 2.6 0 5.7 0 9.5s3.4 6.9 7.7 6.9 7.7-3.1 7.7-6.9S12 2.6 7.7 2.6z" />
-      </svg>
-    </a>
-  </div>
-</nav>
 
+  
+  <nav class="navbar" [class.hidden]="!navbarVisible">
+    <div class="flex inline-flex items-center space-x-10">
+      <a class="flex items-center" (click)="toggleDropdownMenu()">
+        <img src="assets/imgs/logo.svg" width="55" alt="HYD Logo" />
+      </a>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+        <svg id="youtube-logo" width="55" data-name="Logo" viewBox="0 0 24 24" fill="#000">
+          <path
+          d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z" />
+        </svg>
+      </a>
+      <a href="https://fr.linkedin.com/in/huiying-dai-7219a71b5" target="_blank">
+        <svg id="linkedin-logo" width="55" data-name="Logo" viewBox="0 0 80 80" fill="#000">
+          <path
+          d="M1.15 21.7h13V61h-13zm46.55-1.3c-5.7 0-9.1 2.1-12.7 6.7v-5.4H22V61h13.1V39.7c0-4.5 2.3-8.9 7.5-8.9s8.3 4.4 8.3 8.8V61H64V38.7c0-15.5-10.5-18.3-16.3-18.3zM7.7 2.6C3.4 2.6 0 5.7 0 9.5s3.4 6.9 7.7 6.9 7.7-3.1 7.7-6.9S12 2.6 7.7 2.6z" />
+        </svg>
+      </a>
+    </div>
+    <div class="dropdown">
+      <div id="dropdown-menu" class="dropdown-menu hidden text-center">
+        <a href="#projects">PROJETS</a>
+        <a href="artpage">CENTRES D'INTERET</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+  
 
 <router-outlet></router-outlet>
+
+<!-- <footer class="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-6"> -->
+  <footer class="bg-[#4AA3A2] text-white p-6">
+  <div class="container mx-auto text-center">
+    <p>
+      © 2023 Portfolio of HYD. All rights reserved.
+    </p>
+    <!-- <div class="mt-4">
+      <a class="text-white hover:text-gray-200 mx-2" href="#">
+        <i class="fab fa-linkedin-in">
+        </i>
+      </a>
+      <a class="text-white hover:text-gray-200 mx-2" href="#">
+        <i class="fab fa-github">
+        </i>
+      </a>
+    </div> -->
+  </div>
+</footer>
+
+
 </body>

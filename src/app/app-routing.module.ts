@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArtpageComponent } from './pages/artpage/artpage.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { WorkpageComponent } from './pages/workpage/workpage.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 import { FlipcardComponent } from './components/flipcard/flipcard.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'artpage', component: ArtpageComponent },
   { path: 'workpage', component: WorkpageComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '**', component: HomepageComponent }
 ]
 

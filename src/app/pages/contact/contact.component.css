@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Dramatic';
+    src: url('/assets/fonts/dramaticheart/DramaticHeartsBoldPersonalBold.otf') format('opentype');
+  }
+  
+  .title {
+    font-family: 'Dramatic', sans-serif;
+    font-size: clamp(5rem, 10vw, 10rem);
+  }
+  

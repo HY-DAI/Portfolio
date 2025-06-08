@@ -5,6 +5,7 @@ import { InteractiveFaceComponent } from 'src/app/components/interactive-face/in
 import { BackgroundTextComponent } from 'src/app/components/background-text/background-text.component';
 import { ArtpageComponent } from '../artpage/artpage.component';
 import { WorkpageComponent } from '../workpage/workpage.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-homepage',
@@ -15,7 +16,8 @@ import { WorkpageComponent } from '../workpage/workpage.component';
     InteractiveFaceComponent,
     BackgroundTextComponent,
     ArtpageComponent,
-    WorkpageComponent],
+    WorkpageComponent,
+    ContactComponent],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })

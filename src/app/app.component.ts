@@ -12,9 +12,18 @@ export class AppComponent {
   lastScrollTop = 0;
   navbarVisible = true;
   
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
-  } 
+  // toggleDropdown() {
+  //   this.isDropdownOpen = !this.isDropdownOpen;
+  // } 
+  
+  toggleDropdownMenu() {
+    let menu: HTMLElement | null = document.getElementById("dropdown-menu");
+  
+    if (menu) {
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  }
+  
 
   @HostListener('window:scroll', [])
   onScroll() {
